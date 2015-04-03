@@ -20,7 +20,7 @@ function dec2bin(number, quiet) {
   }
 
   if (quiet) {
-    // just 
+    // just print, use less memory and don't return anything
     printButDontReturn(stack);
     return;
   }
