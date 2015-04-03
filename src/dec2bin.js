@@ -3,7 +3,7 @@ var Stack = require('./stack').Stack;
 /*
  * only works for positive numbers
  */
-function dec2bin(number) {
+function dec2bin(number, quiet) {
   var stack = new Stack(),
       remainingValue = number,
       outputArray = [];
@@ -19,12 +19,26 @@ function dec2bin(number) {
     remainingValue = Math.floor(remainingValue / 2);
   }
 
+  if (quiet) {
+    // just 
+    printButDontReturn(stack);
+    return;
+  }
+
   while (!stack.isEmpty()) {
+    // this seems better that +=-ing a string
     outputArray.push(stack.pop());
   }
 
   return outputArray.join('');
 
+}
+
+function printButDontReturn(stack) {
+  while (!stack.isEmpty()) {
+    process.stdout.write('' + stack.pop());
+  }
+  process.stdout.write('\n');
 }
 
 module.exports = {
