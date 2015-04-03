@@ -38,13 +38,14 @@ function dec2bin(number, quiet) {
 function bin2dec(binaryString) {
   var output = 0,
       currentPower = 0,
+      binaryDigitMaybe,
       i;
 
   for (i=binaryString.length - 1; i>=0; i--) {
-    binaryDigitMaybe = parseInt(binaryString[i]);
-    if (binaryDigitMaybe !== 0 && binaryDigitMaybe !== 0) {
+    if (['1', '0'].indexOf(binaryString[i]) === -1) {
       throw new Error('invalid binary digit: ' + binaryString[i]);
     }
+    binaryDigitMaybe = parseInt(binaryString[i]);
     output += (+binaryString[i] * Math.pow(2, currentPower));
     currentPower++;
   }
