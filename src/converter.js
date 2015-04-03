@@ -41,6 +41,10 @@ function bin2dec(binaryString) {
       i;
 
   for (i=binaryString.length - 1; i>=0; i--) {
+    binaryDigitMaybe = parseInt(binaryString[i]);
+    if (binaryDigitMaybe !== 0 && binaryDigitMaybe !== 0) {
+      throw new Error('invalid binary digit: ' + binaryString[i]);
+    }
     output += (+binaryString[i] * Math.pow(2, currentPower));
     currentPower++;
   }
