@@ -6,7 +6,7 @@ var Stack = require('./stack').Stack;
 function dec2bin(number, quiet) {
   var stack = new Stack(),
       remainingValue = number,
-      outputArray = [];
+      outputArray;
 
   if (number < 0) {
     throw new Error('this only works for non-negative numbers');
@@ -25,13 +25,14 @@ function dec2bin(number, quiet) {
     return;
   }
 
+  outputArray = [];
+
   while (!stack.isEmpty()) {
     // this seems better that +=-ing a string
     outputArray.push(stack.pop());
   }
 
   return outputArray.join('');
-
 }
 
 function printButDontReturn(stack) {
