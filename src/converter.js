@@ -35,6 +35,19 @@ function dec2bin(number, quiet) {
   return outputArray.join('');
 }
 
+function bin2dec(binaryString) {
+  var output = 0,
+      currentPower = 0,
+      i;
+
+  for (i=binaryString.length - 1; i>=0; i--) {
+    output += (+binaryString[i] * Math.pow(2, currentPower));
+    currentPower++;
+  }
+
+  return output;
+}
+
 function printButDontReturn(stack) {
   while (!stack.isEmpty()) {
     process.stdout.write('' + stack.pop());
@@ -43,6 +56,7 @@ function printButDontReturn(stack) {
 }
 
 module.exports = {
-  dec2bin: dec2bin
+  dec2bin: dec2bin,
+  bin2dec: bin2dec
 };
 
