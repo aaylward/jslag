@@ -1,17 +1,19 @@
 {
   "name": "jslag",
   "version": "1.0.0",
-  "description": "",
+  "description": "some js fun",
+  "repository": "git@github.com:aaylward/jslag.git",
   "main": "index.js",
   "directories": {
     "test": "test"
   },
   "scripts": {
-    "test": "mocha test"
+    "test": "./node_modules/mocha/bin/mocha"
   },
   "author": "",
   "license": "ISC",
-  "dependencies": {
+  "devDependencies": {
+    "mocha": "^2.2.1",
     "should": "^5.2.0"
   }
 }
