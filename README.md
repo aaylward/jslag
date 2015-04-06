@@ -1,4 +1,4 @@
 IONO
 ====
 
-js for fun on planes
+js stuff for fun on planes
