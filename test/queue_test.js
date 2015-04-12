@@ -14,6 +14,7 @@ describe('Queue', function() {
       q.enqueue(i);
     }
 
+    q.peek().should.equal(1);
     q.dequeue().should.equal(1);
     q._items().length.should.equal(5); // should not have resized
 
